@@ -11,3 +11,7 @@ export default function configureStore (initialState: {} | undefined) {
     composeEnhancers(applyMiddleware(thunk))
   )
 }
+
+const store = configureStore({})
+
+export type AppDispatch = typeof store.dispatch
