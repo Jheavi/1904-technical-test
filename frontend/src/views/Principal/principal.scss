@@ -7,26 +7,26 @@
   background-color: $main-black;
 }
 
-.movies-list {
+.product-list {
   display: flex;
   flex-wrap: wrap;
   width: 500px;
 }
 
 @media screen and (min-width: 750px) and (max-width: 1010px) {
-  .movies-list {
+  .product-list {
     width: 750px;
   }
 }
 
 @media screen and (min-width: 1010px) and (max-width: 1250px) {
-  .movies-list {
+  .product-list {
     width: 1000px;
   }
 }
 
 @media screen and (min-width: 1250px) {
-  .movies-list {
+  .product-list {
     width: 1240px;
   }
 }
