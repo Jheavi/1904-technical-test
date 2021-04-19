@@ -16,7 +16,8 @@ function App () {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route path="/movies" component={Principal}/>
+          <Route path="/movies" component={() => <Principal product="movies"/>}/>
+          <Route path="/shows" component={() => <Principal product="shows"/>}/>
           <Route path="/">
             <Redirect to="/movies" />
           </Route>
