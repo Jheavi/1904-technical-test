@@ -1,0 +1,38 @@
+.principal-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #181818;
+}
+
+.movies-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 500px;
+}
+
+@media screen and (min-width: 750px) and (max-width: 1010px) {
+  .movies-list {
+    width: 750px;
+  }
+}
+
+@media screen and (min-width: 1010px) and (max-width: 1250px) {
+  .movies-list {
+    width: 1000px;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .movies-list {
+    width: 1240px;
+  }
+}
+/*# sourceMappingURL=principal.css.map */
