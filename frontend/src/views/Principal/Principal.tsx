@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { loadPopularMovies, loadPopularShows } from '../../redux/actions/moviesActions'
+import { loadPopularMovies, loadPopularShows } from '../../redux/actions/actions'
 import ItemDetail from '../../components/ItemDetail/ItemDetail'
 import './principal.css'
 import { State } from '../../interfaces/state'
