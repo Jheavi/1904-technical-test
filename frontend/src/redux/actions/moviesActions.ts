@@ -5,7 +5,7 @@ import actionTypes from './actionTypes'
 
 function loadPopularMoviesSuccess (movieList: any) {
   return {
-    type: actionTypes.LOAD_MOVIES,
+    type: actionTypes.LOAD_POPULAR_MOVIES,
     movieList
   }
 }
