@@ -1,0 +1,45 @@
+.item-container {
+  width: 200px;
+  margin: 20px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.item-container img {
+  width: 200px;
+  height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-transition: outline 0.1s;
+  transition: outline 0.1s;
+  cursor: pointer;
+}
+
+.item-container img:hover {
+  outline: 5px solid yellow;
+}
+
+.item-container h3 {
+  text-align: center;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.item-container span {
+  margin-top: 5px;
+  color: #a0a0a0;
+}
+
+.item-container .small-text {
+  font-size: 13px;
+}
+/*# sourceMappingURL=itemDetail.css.map */
