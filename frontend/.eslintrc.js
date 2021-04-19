@@ -21,6 +21,7 @@ module.exports = {
     '@typescript-eslint'
   ],
   rules: {
-    'no-use-before-define': 0
+    'no-use-before-define': 0,
+    'no-debugger': 1
   }
 }
