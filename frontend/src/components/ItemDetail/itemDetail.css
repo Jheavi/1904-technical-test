@@ -14,6 +14,14 @@
           align-items: center;
 }
 
+.item-container .detail-link:hover img {
+  outline: 5px solid yellow;
+}
+
+.item-container .detail-link:hover h3 {
+  color: yellow;
+}
+
 .item-container img {
   width: 200px;
   height: 300px;
@@ -24,14 +32,12 @@
   cursor: pointer;
 }
 
-.item-container img:hover {
-  outline: 5px solid yellow;
-}
-
 .item-container h3 {
   text-align: center;
   margin-top: 8px;
   cursor: pointer;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 
 .item-container span {
