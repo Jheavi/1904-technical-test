@@ -1,10 +1,11 @@
 import axios from 'axios'
+import { AnyAction } from 'redux'
 import movieDbUrls from '../../constants/urls'
 import { Movie, Show } from '../../interfaces/interfaces'
 import { AppDispatch } from '../configureStore'
 import actionTypes from './actionTypes'
 
-function loadPopularMoviesSuccess (movieList: Movie[]) {
+function loadPopularMoviesSuccess (movieList: Movie[]): AnyAction {
   return {
     type: actionTypes.LOAD_POPULAR_MOVIES,
     movieList
@@ -23,7 +24,7 @@ export function loadPopularMovies () {
   }
 }
 
-function loadPopularShowsSuccess (showList: Show[]) {
+function loadPopularShowsSuccess (showList: Show[]): AnyAction {
   return {
     type: actionTypes.LOAD_POPULAR_SHOWS,
     showList
