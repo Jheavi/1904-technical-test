@@ -7,7 +7,7 @@ function Header () {
     <header>
       <h1>TV Shows and Movies</h1>
       <div className="options">
-        <Link to="">
+        <Link to="/movies">
           <h2>Movies</h2>
         </Link>
         <Link to="">
