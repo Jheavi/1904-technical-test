@@ -22,6 +22,7 @@ module.exports = {
   ],
   rules: {
     'no-use-before-define': 0,
-    'no-debugger': 1
+    'no-debugger': 1,
+    camelcase: 0
   }
 }
