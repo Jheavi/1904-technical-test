@@ -33,10 +33,13 @@ function Principal ({ dispatch, movies, product, shows }: any) {
   )
 }
 
-function mapDispatchToProps ({ moviesReducer, showsReducer }: State) {
+function mapDispatchToProps ({
+  moviesReducer: { popularMovies },
+  showsReducer: { popularShows }
+}: State) {
   return {
-    movies: moviesReducer.popularMovies,
-    shows: showsReducer.popularShows
+    movies: popularMovies,
+    shows: popularShows
   }
 }
 
