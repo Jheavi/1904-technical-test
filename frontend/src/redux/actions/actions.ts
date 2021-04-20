@@ -80,3 +80,22 @@ export function loadSimilarMovies (movieId: string) {
     }
   }
 }
+
+function loadShowDetailSuccess (show: Show) {
+  return {
+    type: actionTypes.LOAD_SHOW_DETAIL,
+    show
+  }
+}
+
+export function loadShowDetail (showId: string) {
+  return async (dispatch: AppDispatch) => {
+    try {
+      const { data } = await axios.get(movieDbUrls.showDetail(showId))
+
+      dispatch(loadShowDetailSuccess(data))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
