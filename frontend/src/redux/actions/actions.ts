@@ -42,3 +42,22 @@ export function loadPopularShows () {
     }
   }
 }
+
+function loadSimilarMoviesSuccess (similarMovies: Movie[]) {
+  return {
+    type: actionTypes.LOAD_SIMILAR_MOVIES,
+    similarMovies
+  }
+}
+
+export function loadSimilarMovies (movieId: string) {
+  return async (dispatch: AppDispatch) => {
+    try {
+      const { data: { results } } = await axios.get(movieDbUrls.similarMovies(movieId))
+
+      dispatch(loadSimilarMoviesSuccess(results))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
