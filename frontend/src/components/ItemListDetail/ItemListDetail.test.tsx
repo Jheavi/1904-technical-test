@@ -1,7 +1,7 @@
 import React from 'react'
 import { act, render } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
-import ItemDetail from './ItemDetail'
+import ItemDetail from './ItemListDetail'
 
 describe('Given a ItemDetail component', () => {
   let container: HTMLElement

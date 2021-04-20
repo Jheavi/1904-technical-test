@@ -6,6 +6,7 @@ import configureStore from './redux/configureStore'
 import initialState from './redux/initialState'
 import Header from './components/Header/Header'
 import Principal from './views/Principal/Principal'
+import Detail from './views/Detail/Detail'
 require('dotenv').config()
 
 const store = configureStore(initialState)
@@ -15,13 +16,17 @@ function App () {
     <Provider store={store}>
       <BrowserRouter>
         <Header />
+        <main>
         <Switch>
+          <Route path="/movies/:id" component={() => <Detail product="movies"/>}/>
+          <Route path="/shows/:id" component={() => <Detail product="shows"/>}/>
           <Route path="/movies" component={() => <Principal product="movies"/>}/>
           <Route path="/shows" component={() => <Principal product="shows"/>}/>
           <Route path="/">
             <Redirect to="/movies" />
           </Route>
         </Switch>
+        </main>
       </BrowserRouter>
     </Provider>
   )

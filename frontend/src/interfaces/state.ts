@@ -1,10 +1,14 @@
-import { Movie } from './interfaces'
+import { Movie, Show } from './interfaces'
 
 export interface State {
   moviesReducer: {
-    popularMovies: Movie[] | []
+    popularMovies: Movie[] | [],
+    movie: Movie,
+    similarMovies: Movie[] | []
   }
   showsReducer: {
-    popularShows: any
+    popularShows: Show[] | []
+    show: Show,
+    similarShows: Show[] | []
   }
 }

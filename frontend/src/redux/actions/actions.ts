@@ -42,3 +42,79 @@ export function loadPopularShows () {
     }
   }
 }
+
+function loadMovieDetailSuccess (movie: Movie) {
+  return {
+    type: actionTypes.LOAD_MOVIE_DETAIL,
+    movie
+  }
+}
+
+export function loadMovieDetail (movieId: string) {
+  return async (dispatch: AppDispatch) => {
+    try {
+      const { data } = await axios.get(movieDbUrls.movieDetail(movieId))
+
+      dispatch(loadMovieDetailSuccess(data))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
+function loadSimilarMoviesSuccess (similarMovies: Movie[]) {
+  return {
+    type: actionTypes.LOAD_SIMILAR_MOVIES,
+    similarMovies
+  }
+}
+
+export function loadSimilarMovies (movieId: string) {
+  return async (dispatch: AppDispatch) => {
+    try {
+      const { data: { results } } = await axios.get(movieDbUrls.similarMovies(movieId))
+
+      dispatch(loadSimilarMoviesSuccess(results))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
+function loadShowDetailSuccess (show: Show) {
+  return {
+    type: actionTypes.LOAD_SHOW_DETAIL,
+    show
+  }
+}
+
+export function loadShowDetail (showId: string) {
+  return async (dispatch: AppDispatch) => {
+    try {
+      const { data } = await axios.get(movieDbUrls.showDetail(showId))
+
+      dispatch(loadShowDetailSuccess(data))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
+function loadSimilarShowsSuccess (similarShows: Show[]) {
+  return {
+    type: actionTypes.LOAD_SIMILAR_SHOWS,
+    similarShows
+  }
+}
+
+export function loadSimilarShows (showId: string) {
+  return async (dispatch: AppDispatch) => {
+    try {
+      const { data: { results } } = await axios.get(movieDbUrls.similarShows(showId))
+
+      dispatch(loadSimilarShowsSuccess(results))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
