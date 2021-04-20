@@ -43,6 +43,25 @@ export function loadPopularShows () {
   }
 }
 
+function loadMovieDetailSuccess (movie: Movie) {
+  return {
+    type: actionTypes.LOAD_MOVIE_DETAIL,
+    movie
+  }
+}
+
+export function loadMovieDetail (movieId: string) {
+  return async (dispatch: AppDispatch) => {
+    try {
+      const { data } = await axios.get(movieDbUrls.movieDetail(movieId))
+
+      dispatch(loadMovieDetailSuccess(data))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
 function loadSimilarMoviesSuccess (similarMovies: Movie[]) {
   return {
     type: actionTypes.LOAD_SIMILAR_MOVIES,
