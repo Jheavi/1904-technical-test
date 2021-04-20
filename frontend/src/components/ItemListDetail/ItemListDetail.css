@@ -15,11 +15,11 @@
 }
 
 .item-container .detail-link:hover img {
-  outline: 5px solid yellow;
+  outline: 5px solid #ffff00;
 }
 
 .item-container .detail-link:hover h3 {
-  color: yellow;
+  color: #ffff00;
 }
 
 .item-container img {
