@@ -6,6 +6,9 @@ const initialState = {
   showsReducer: {
     popularShows: [],
     similarShows: []
+  },
+  errorReducer: {
+    error: null
   }
 }
 

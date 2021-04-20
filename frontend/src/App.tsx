@@ -7,6 +7,7 @@ import initialState from './redux/initialState'
 import Header from './components/Header/Header'
 import Principal from './views/Principal/Principal'
 import Detail from './views/Detail/Detail'
+import ErrorPage from './views/ErrorPage/ErrorPage'
 require('dotenv').config()
 
 const store = configureStore(initialState)
@@ -22,6 +23,7 @@ function App () {
           <Route path="/shows/:id" component={() => <Detail product="shows"/>}/>
           <Route path="/movies" component={() => <Principal product="movies"/>}/>
           <Route path="/shows" component={() => <Principal product="shows"/>}/>
+          <Route path="/error" component={ErrorPage}/>
           <Route path="/">
             <Redirect to="/movies" />
           </Route>
