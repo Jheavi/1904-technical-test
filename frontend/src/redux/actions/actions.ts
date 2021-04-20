@@ -99,3 +99,22 @@ export function loadShowDetail (showId: string) {
     }
   }
 }
+
+function loadSimilarShowsSuccess (similarShows: Show[]) {
+  return {
+    type: actionTypes.LOAD_SIMILAR_SHOWS,
+    similarShows
+  }
+}
+
+export function loadSimilarShows (showId: string) {
+  return async (dispatch: AppDispatch) => {
+    try {
+      const { data: { results } } = await axios.get(movieDbUrls.similarShows(showId))
+
+      dispatch(loadSimilarShowsSuccess(results))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}

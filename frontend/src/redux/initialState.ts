@@ -4,7 +4,8 @@ const initialState = {
     similarMovies: []
   },
   showsReducer: {
-    popularShows: []
+    popularShows: [],
+    similarShows: []
   }
 }
 
