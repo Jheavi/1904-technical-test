@@ -6,7 +6,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #181818;
+  background-color: transparent;
 }
 
 .product-list {

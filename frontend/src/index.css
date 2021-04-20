@@ -31,4 +31,8 @@ a {
 a:visited {
   color: inherit;
 }
+
+main {
+  background-color: #181818;
+}
 /*# sourceMappingURL=index.css.map */

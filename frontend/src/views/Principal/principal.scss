@@ -1,10 +1,8 @@
-@import "../../styles/colors";
-
 .principal-container {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: $main-black;
+  background-color: transparent;
 }
 
 .product-list {
