@@ -12,7 +12,7 @@
     position: relative;
 
     h1 {
-      font-size: 60px;
+      font-size: 30px;
       text-align: center;
       position: absolute;
       left: 0;
@@ -56,32 +56,81 @@
     }
 
     .average {
-      font-size: 30px;
+      font-size: 18px;
     }
 
     .average__number {
       margin: 0;
       color: $yellow;
     }
+
+    .overview {
+      font-size: 14px;
+    }
   }
 
   .similar-products {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .similar-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }
 
 @media screen and (min-width: 650px) {
   .detail-container {
-    .overview {
-      width: 600px;
+    .average-overview {
+      .overview {
+        width: 600px;
+        font-size: 18px;
+      }
+
+      .average {
+        font-size: 24px;
+      }
+    }
+
+    .title-gradient {
+      h1 {
+        font-size: 44px;
+      }
+    }
+
+    .similar-products {
+      align-items: flex-start;
+
+      > h3 {
+        margin-left: 25px;
+      }
+
+      .similar-list {
+        flex-direction: row;
+      }
     }
   }
 }
 
 @media screen and (min-width: 900px) {
   .detail-container {
-    .overview {
-      width: 75%;
+    .average-overview {
+      .overview {
+        width: 75%;
+      }
+
+      .average {
+        font-size: 30px;
+      }
+    }
+
+    .title-gradient {
+      h1 {
+        font-size: 60px;
+      }
     }
   }
 }

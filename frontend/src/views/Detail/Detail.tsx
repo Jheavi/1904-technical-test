@@ -40,14 +40,17 @@ function Detail ({ dispatch, movie, product, show, similarMovies, similarShows }
         <span className="overview">{item?.overview}</span>
       </div>
       <section className="similar-products">
-        {product === 'movies'
-          ? similarMovies.map((movie: Movie) => (
-            <ItemListDetail item={movie} key={movie.id} showAdditionalInfo={false}/>
-          ))
-          : similarShows.map((show: Show) => (
-            <ItemListDetail item={show} key={show.id} showAdditionalInfo={false}/>
-          ))
-      }
+        <h3>Similar {product}</h3>
+        <ul className="product-list similar-list">
+          {product === 'movies'
+            ? similarMovies.map((movie: Movie) => (
+              <ItemListDetail item={movie} key={movie.id} showAdditionalInfo={false}/>
+            ))
+            : similarShows.map((show: Show) => (
+                <ItemListDetail item={show} key={show.id} showAdditionalInfo={false}/>
+            ))
+          }
+        </ul>
       </section>
     </div>
   )

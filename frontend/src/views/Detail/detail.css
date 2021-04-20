@@ -19,7 +19,7 @@
 }
 
 .detail-container .title-gradient h1 {
-  font-size: 60px;
+  font-size: 30px;
   text-align: center;
   position: absolute;
   left: 0;
@@ -67,7 +67,7 @@
 }
 
 .detail-container .average-overview .average {
-  font-size: 30px;
+  font-size: 18px;
 }
 
 .detail-container .average-overview .average__number {
@@ -75,21 +75,72 @@
   color: #ffff00;
 }
 
+.detail-container .average-overview .overview {
+  font-size: 14px;
+}
+
 .detail-container .similar-products {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.detail-container .similar-products .similar-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (min-width: 650px) {
-  .detail-container .overview {
+  .detail-container .average-overview .overview {
     width: 600px;
+    font-size: 18px;
+  }
+  .detail-container .average-overview .average {
+    font-size: 24px;
+  }
+  .detail-container .title-gradient h1 {
+    font-size: 44px;
+  }
+  .detail-container .similar-products {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .detail-container .similar-products > h3 {
+    margin-left: 25px;
+  }
+  .detail-container .similar-products .similar-list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 
 @media screen and (min-width: 900px) {
-  .detail-container .overview {
+  .detail-container .average-overview .overview {
     width: 75%;
+  }
+  .detail-container .average-overview .average {
+    font-size: 30px;
+  }
+  .detail-container .title-gradient h1 {
+    font-size: 60px;
   }
 }
 
