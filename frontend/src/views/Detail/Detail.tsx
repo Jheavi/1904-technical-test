@@ -1,30 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { useParams } from 'react-router'
 import ItemListDetail from '../../components/ItemListDetail/ItemListDetail'
 import movieDbUrls from '../../constants/urls'
 import { Movie } from '../../interfaces/interfaces'
 import { State } from '../../interfaces/state'
-import { loadPopularMovies, loadSimilarMovies } from '../../redux/actions/actions'
+import { loadMovieDetail, loadSimilarMovies } from '../../redux/actions/actions'
 import './detail.css'
 
-function Detail ({ dispatch, movies, similarMovies }: any) {
+function Detail ({ dispatch, movie, similarMovies }: any) {
   const { id }: { id: string} = useParams()
-  const [movie, setMovie] = useState(movies.find((movie: Movie) => movie.id === +id))
-  console.log(movie)
 
   useEffect(() => {
     if (movie?.id !== +id) {
-      setMovie(movies.find((movie: Movie) => movie.id === +id))
+      dispatch(loadMovieDetail(id))
+      dispatch(loadSimilarMovies(id))
     }
-  }, [id, movies])
-
-  useEffect(() => {
-    if (!movies || !movies.length) {
-      dispatch(loadPopularMovies())
-    }
-    dispatch(loadSimilarMovies(id))
-  }, [])
+  }, [id])
 
   return (
     <div className="detail-container">
@@ -55,9 +47,9 @@ function Detail ({ dispatch, movies, similarMovies }: any) {
   )
 }
 
-function mapStateToProps ({ moviesReducer: { popularMovies, similarMovies } }: State) {
+function mapStateToProps ({ moviesReducer: { movie, similarMovies } }: State) {
   return {
-    movies: popularMovies,
+    movie,
     similarMovies
   }
 }
