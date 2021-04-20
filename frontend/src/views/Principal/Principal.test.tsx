@@ -9,7 +9,7 @@ import * as actions from '../../redux/actions/actions'
 import initialState from '../../redux/initialState'
 
 jest.mock('../../redux/actions/actions')
-jest.mock('../../components/ItemDetail/ItemDetail')
+jest.mock('../../components/ItemListDetail/ItemListDetail')
 
 const buildStore = configureMockStore([thunk])
 

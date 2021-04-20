@@ -11,4 +11,7 @@ export interface State {
     show: Show,
     similarShows: Show[] | []
   }
+  errorReducer: {
+    error: any | null
+  }
 }

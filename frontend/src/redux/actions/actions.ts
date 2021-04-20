@@ -5,10 +5,18 @@ import { Movie, Show } from '../../interfaces/interfaces'
 import { AppDispatch } from '../configureStore'
 import actionTypes from './actionTypes'
 
+function loadError (error: any) {
+  return {
+    type: actionTypes.LOAD_ERROR,
+    error
+  }
+}
+
 function loadPopularMoviesSuccess (movieList: Movie[]): AnyAction {
   return {
     type: actionTypes.LOAD_POPULAR_MOVIES,
-    movieList
+    movieList,
+    error: null
   }
 }
 
@@ -19,7 +27,7 @@ export function loadPopularMovies () {
 
       dispatch(loadPopularMoviesSuccess(results))
     } catch (error) {
-      console.log(error)
+      dispatch(loadError(error))
     }
   }
 }
@@ -27,7 +35,8 @@ export function loadPopularMovies () {
 function loadPopularShowsSuccess (showList: Show[]): AnyAction {
   return {
     type: actionTypes.LOAD_POPULAR_SHOWS,
-    showList
+    showList,
+    error: null
   }
 }
 
@@ -38,7 +47,7 @@ export function loadPopularShows () {
 
       dispatch(loadPopularShowsSuccess(results))
     } catch (error) {
-      console.log(error)
+      dispatch(loadError(error))
     }
   }
 }
@@ -46,7 +55,8 @@ export function loadPopularShows () {
 function loadMovieDetailSuccess (movie: Movie) {
   return {
     type: actionTypes.LOAD_MOVIE_DETAIL,
-    movie
+    movie,
+    error: null
   }
 }
 
@@ -57,7 +67,7 @@ export function loadMovieDetail (movieId: string) {
 
       dispatch(loadMovieDetailSuccess(data))
     } catch (error) {
-      console.log(error)
+      dispatch(loadError(error))
     }
   }
 }
@@ -65,7 +75,8 @@ export function loadMovieDetail (movieId: string) {
 function loadSimilarMoviesSuccess (similarMovies: Movie[]) {
   return {
     type: actionTypes.LOAD_SIMILAR_MOVIES,
-    similarMovies
+    similarMovies,
+    error: null
   }
 }
 
@@ -76,7 +87,7 @@ export function loadSimilarMovies (movieId: string) {
 
       dispatch(loadSimilarMoviesSuccess(results))
     } catch (error) {
-      console.log(error)
+      dispatch(loadError(error))
     }
   }
 }
@@ -84,7 +95,8 @@ export function loadSimilarMovies (movieId: string) {
 function loadShowDetailSuccess (show: Show) {
   return {
     type: actionTypes.LOAD_SHOW_DETAIL,
-    show
+    show,
+    error: null
   }
 }
 
@@ -95,7 +107,7 @@ export function loadShowDetail (showId: string) {
 
       dispatch(loadShowDetailSuccess(data))
     } catch (error) {
-      console.log(error)
+      dispatch(loadError(error))
     }
   }
 }
@@ -103,7 +115,8 @@ export function loadShowDetail (showId: string) {
 function loadSimilarShowsSuccess (similarShows: Show[]) {
   return {
     type: actionTypes.LOAD_SIMILAR_SHOWS,
-    similarShows
+    similarShows,
+    error: null
   }
 }
 
@@ -114,7 +127,7 @@ export function loadSimilarShows (showId: string) {
 
       dispatch(loadSimilarShowsSuccess(results))
     } catch (error) {
-      console.log(error)
+      dispatch(loadError(error))
     }
   }
 }
