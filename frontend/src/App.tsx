@@ -18,9 +18,10 @@ function App () {
         <Header />
         <main>
         <Switch>
+          <Route path="/movies/:id" component={() => <Detail product="movies"/>}/>
+          <Route path="/shows/:id" component={() => <Detail product="shows"/>}/>
           <Route path="/movies" component={() => <Principal product="movies"/>}/>
           <Route path="/shows" component={() => <Principal product="shows"/>}/>
-          <Route path="/detail/:id" component={Detail}/>
           <Route path="/">
             <Redirect to="/movies" />
           </Route>
