@@ -75,6 +75,12 @@
   color: #ffff00;
 }
 
+.detail-container .similar-movies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 @media screen and (min-width: 650px) {
   .detail-container .overview {
     width: 600px;

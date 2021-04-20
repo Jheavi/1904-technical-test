@@ -64,6 +64,10 @@
       color: $yellow;
     }
   }
+
+  .similar-movies {
+    display: flex;
+  }
 }
 
 @media screen and (min-width: 650px) {
