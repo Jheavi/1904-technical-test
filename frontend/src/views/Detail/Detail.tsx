@@ -41,7 +41,7 @@ function Detail ({ dispatch, movie, product, show, similarMovies, similarShows }
       </div>
       <section className="similar-products">
         <h3>Similar {product}</h3>
-        <ul className="product-list">
+        <ul className="product-list similar-list">
           {product === 'movies'
             ? similarMovies.map((movie: Movie) => (
               <ItemListDetail item={movie} key={movie.id} showAdditionalInfo={false}/>
