@@ -67,6 +67,11 @@
 
   .similar-products {
     display: flex;
+    flex-direction: column;
+
+    > h3 {
+      margin-left: 25px;
+    }
   }
 }
 
