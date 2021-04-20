@@ -8,5 +8,7 @@ export interface State {
   }
   showsReducer: {
     popularShows: Show[] | []
+    show: Show,
+    similarShows: Show[] | []
   }
 }
