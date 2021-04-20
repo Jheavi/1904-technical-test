@@ -6,7 +6,6 @@ export default function moviesReducer (state = initialState.moviesReducer, actio
   switch (action.type) {
     case actionTypes.LOAD_POPULAR_MOVIES:
       return { ...state, popularMovies: action.movieList }
-
     default:
       return state
   }
