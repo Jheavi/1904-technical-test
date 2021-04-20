@@ -6,7 +6,7 @@ import './ItemListDetail.css'
 export default function ItemListDetail ({ item }: any) {
   return (
     <li className="item-container" >
-      <Link to="" className="detail-link">
+      <Link to={`/detail/${item.id}`} className="detail-link">
         <img src={`${movieDbUrls.images}${item.poster_path}`} alt={item.title || item.name}/>
         <h3>{item.title || item.name}</h3>
       </Link>
