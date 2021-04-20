@@ -4,7 +4,8 @@ const apiKeyFormat = `api_key=${process.env.REACT_APP_API_KEY}&language=en-US&pa
 const movieDbUrls = {
   popularFilms: `${generalUrl}/movie/popular?${apiKeyFormat}`,
   popularShows: `${generalUrl}/tv/popular?${apiKeyFormat}`,
-  images: 'https://image.tmdb.org/t/p/w500'
+  images: 'https://image.tmdb.org/t/p/w500',
+  bigImages: 'https://image.tmdb.org/t/p/w1280'
 }
 
 export default movieDbUrls
