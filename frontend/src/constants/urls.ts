@@ -3,6 +3,7 @@ const apiKeyFormat = `api_key=${process.env.REACT_APP_API_KEY}&language=en-US&pa
 
 const movieDbUrls = {
   popularFilms: `${generalUrl}/movie/popular?${apiKeyFormat}`,
+  movieDetail: (movieId: string) => `${generalUrl}/movie/${movieId}?${apiKeyFormat}`,
   similarMovies: (movieId: string) => `${generalUrl}/movie/${movieId}/similar?${apiKeyFormat}`,
   popularShows: `${generalUrl}/tv/popular?${apiKeyFormat}`,
   images: 'https://image.tmdb.org/t/p/w500',
