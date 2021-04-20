@@ -6,6 +6,8 @@ const movieDbUrls = {
   movieDetail: (movieId: string) => `${generalUrl}/movie/${movieId}?${apiKeyFormat}`,
   similarMovies: (movieId: string) => `${generalUrl}/movie/${movieId}/similar?${apiKeyFormat}`,
   popularShows: `${generalUrl}/tv/popular?${apiKeyFormat}`,
+  showDetail: (showId: string) => `${generalUrl}/tv/${showId}?${apiKeyFormat}`,
+  similarShows: (showId: string) => `${generalUrl}/tv/${showId}/similar?${apiKeyFormat}`,
   images: 'https://image.tmdb.org/t/p/w500',
   bigImages: 'https://image.tmdb.org/t/p/w1280'
 }
