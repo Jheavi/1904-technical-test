@@ -3,12 +3,12 @@ import { connect } from 'react-redux'
 import { useParams } from 'react-router'
 import ItemListDetail from '../../components/ItemListDetail/ItemListDetail'
 import movieDbUrls from '../../constants/urls'
-import { Movie } from '../../interfaces/interfaces'
+import { Movie, Show } from '../../interfaces/interfaces'
 import { State } from '../../interfaces/state'
-import { loadMovieDetail, loadShowDetail, loadSimilarMovies } from '../../redux/actions/actions'
+import { loadMovieDetail, loadShowDetail, loadSimilarMovies, loadSimilarShows } from '../../redux/actions/actions'
 import './detail.css'
 
-function Detail ({ dispatch, movie, product, show, similarMovies }: any) {
+function Detail ({ dispatch, movie, product, show, similarMovies, similarShows }: any) {
   const { id }: { id: string} = useParams()
   const [item, setItem] = useState(product === 'movies' ? movie : show)
 
@@ -18,6 +18,7 @@ function Detail ({ dispatch, movie, product, show, similarMovies }: any) {
       dispatch(loadSimilarMovies(id))
     } else if (product === 'shows' && show?.id !== +id) {
       dispatch(loadShowDetail(id))
+      dispatch(loadSimilarShows(id))
     }
   }, [id])
 
@@ -38,10 +39,15 @@ function Detail ({ dispatch, movie, product, show, similarMovies }: any) {
         <span className="average">Vote average: <span className="average__number">{item?.vote_average}</span></span>
         <span className="overview">{item?.overview}</span>
       </div>
-      <section className="similar-movies">
-        {similarMovies.map((movie: Movie) => (
-          <ItemListDetail item={movie} key={movie.id} showAdditionalInfo={false}/>
-        ))}
+      <section className="similar-products">
+        {product === 'movies'
+          ? similarMovies.map((movie: Movie) => (
+            <ItemListDetail item={movie} key={movie.id} showAdditionalInfo={false}/>
+          ))
+          : similarShows.map((show: Show) => (
+            <ItemListDetail item={show} key={show.id} showAdditionalInfo={false}/>
+          ))
+      }
       </section>
     </div>
   )
@@ -53,13 +59,15 @@ function mapStateToProps ({
     similarMovies
   },
   showsReducer: {
-    show
+    show,
+    similarShows
   }
 }: State) {
   return {
     movie,
     show,
-    similarMovies
+    similarMovies,
+    similarShows
   }
 }
 
