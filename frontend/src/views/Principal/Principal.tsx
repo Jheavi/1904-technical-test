@@ -7,8 +7,6 @@ import { State } from '../../interfaces/state'
 import { Movie, Show } from '../../interfaces/interfaces'
 
 function Principal ({ dispatch, movies, product, shows }: any) {
-  if (shows) console.log(shows[0])
-
   useEffect(() => {
     if (product === 'movies' && (!movies || !movies.length)) {
       dispatch(loadPopularMovies())
