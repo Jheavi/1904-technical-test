@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { loadPopularMovies, loadPopularShows } from '../../redux/actions/actions'
-import ItemDetail from '../../components/ItemListDetail/ItemListDetail'
+import ItemListDetail from '../../components/ItemListDetail/ItemListDetail'
 import './principal.css'
 import { State } from '../../interfaces/state'
 import { Movie, Show } from '../../interfaces/interfaces'
@@ -24,10 +24,10 @@ function Principal ({ dispatch, movies, product, shows }: any) {
       <ul className="product-list">
         {product === 'movies'
           ? movies.map((movie: Movie) => (
-          <ItemDetail key={movie.id} item={movie}/>
+          <ItemListDetail key={movie.id} item={movie}/>
           ))
           : shows.map((show: Show) => (
-          <ItemDetail key={show.id} item={show}/>
+          <ItemListDetail key={show.id} item={show}/>
           ))
       }
       </ul>
