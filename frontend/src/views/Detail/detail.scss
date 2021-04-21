@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 
   .title-gradient {
     width: 100%;
@@ -34,7 +35,7 @@
   }
 
   .img-container {
-    width: 100%;
+    width: 200%;
     max-height: 60vh;
     overflow: hidden;
 
@@ -48,7 +49,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: -80px 0px 50px;
+    margin: -140px 0px 50px;
     z-index: 2;
 
     span {
@@ -78,6 +79,18 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .detail-container {
+    .img-container {
+      width: 100%;
+    }
+
+    .average-overview {
+      margin: -80px 0px 50px;
     }
   }
 }

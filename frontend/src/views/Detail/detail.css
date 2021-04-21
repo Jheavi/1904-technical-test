@@ -10,6 +10,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow-x: hidden;
 }
 
 .detail-container .title-gradient {
@@ -36,7 +37,7 @@
 }
 
 .detail-container .img-container {
-  width: 100%;
+  width: 200%;
   max-height: 60vh;
   overflow: hidden;
 }
@@ -58,7 +59,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: -80px 0px 50px;
+  margin: -140px 0px 50px;
   z-index: 2;
 }
 
@@ -103,6 +104,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media screen and (min-width: 600px) {
+  .detail-container .img-container {
+    width: 100%;
+  }
+  .detail-container .average-overview {
+    margin: -80px 0px 50px;
+  }
 }
 
 @media screen and (min-width: 650px) {

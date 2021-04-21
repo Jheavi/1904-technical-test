@@ -1,4 +1,4 @@
-@import "./styles/colors";
+@import "./styles/colors", "./styles/sizes";
 
 html,
 body {
@@ -35,4 +35,5 @@ a {
 
 main {
   background-color: $main-black;
+  padding-top: $header-height;
 }

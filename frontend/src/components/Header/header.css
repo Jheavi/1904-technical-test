@@ -4,6 +4,8 @@ header {
   background-color: #3c3c3c;
   color: white;
   text-align: center;
+  position: fixed;
+  z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
