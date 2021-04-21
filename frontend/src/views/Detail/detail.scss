@@ -86,7 +86,7 @@
 @media screen and (min-width: 600px) {
   .detail-container {
     .img-container {
-      width: 100%;
+      width: 150%;
     }
 
     .average-overview {
@@ -128,8 +128,20 @@
   }
 }
 
+@media screen and (min-width: 800px) {
+  .detail-container {
+    .img-container {
+      width: 130%;
+    }
+  }
+}
+
 @media screen and (min-width: 900px) {
   .detail-container {
+    .img-container {
+      width: 100%;
+    }
+
     .average-overview {
       .overview {
         width: 75%;
