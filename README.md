@@ -33,8 +33,8 @@ The scripts you can run with npm are:
 
 ## Unit & Component testing:
 
-![tests](/images/tests.jpg)
-![test coverage](/images/coverage.jpg)
+![tests](/frontend/public/images/tests.jpg)
+![test coverage](/frontend/public/images/coverage.jpg)
 
 ## Other Libraries & Tools:
 
