@@ -6,6 +6,8 @@ header {
   background-color: $main-color;
   color: white;
   text-align: center;
+  position: fixed;
+  z-index: 5;
 
   display: flex;
   align-items: center;
