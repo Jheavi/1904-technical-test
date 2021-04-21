@@ -2,7 +2,7 @@
 
 This is a project built for a technical test for an enterprise.
 
-The app is a full responsive react app with Typescript which takes info from the MovieDB api (https://www.themoviedb.org) where you can:
+The app is a full responsive react app with Typescript which takes info from the MovieDB api (https://developers.themoviedb.org/3) where you can:
 
 - See a list of last popular movies with a image, the title and the vote average.
 - Switch to see a list of last popular tv shows.
