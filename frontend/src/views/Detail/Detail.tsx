@@ -4,11 +4,12 @@ import { useParams } from 'react-router'
 import ItemListDetail from '../../components/ItemListDetail/ItemListDetail'
 import movieDbUrls from '../../constants/urls'
 import { Movie, Show } from '../../interfaces/interfaces'
+import { DetailProps } from '../../interfaces/props'
 import { State } from '../../interfaces/state'
 import { loadMovieDetail, loadShowDetail, loadSimilarMovies, loadSimilarShows } from '../../redux/actions/actions'
 import './detail.css'
 
-function Detail ({ dispatch, movie, product, show, similarMovies, similarShows }: any) {
+function Detail ({ dispatch, movie, product, show, similarMovies, similarShows }: DetailProps) {
   const { id }: { id: string} = useParams()
   const [item, setItem] = useState(product === 'movies' ? movie : show)
 
@@ -33,7 +34,7 @@ function Detail ({ dispatch, movie, product, show, similarMovies, similarShows }
       </div>
       <div className="title-gradient">
         <div className="gradient"></div>
-        <h1>{item?.title || item?.name}</h1>
+        <h1>{item?.type === 'Movie' ? item.title : item?.name}</h1>
       </div>
       <div className="average-overview">
         <span className="average">Vote average: <span className="average__number">{item?.vote_average}</span></span>
