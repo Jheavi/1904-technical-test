@@ -25,7 +25,7 @@ export function loadPopularMovies () {
     try {
       const { data: { results } } = await axios.get(movieDbUrls.popularFilms)
 
-      dispatch(loadPopularMoviesSuccess(results))
+      dispatch(loadPopularMoviesSuccess(results.map((movie: Movie) => ({ ...movie, type: 'Movie' }))))
     } catch (error) {
       dispatch(loadError(error))
     }
@@ -45,7 +45,7 @@ export function loadPopularShows () {
     try {
       const { data: { results } } = await axios.get(movieDbUrls.popularShows)
 
-      dispatch(loadPopularShowsSuccess(results))
+      dispatch(loadPopularShowsSuccess(results.map((show: Show) => ({ ...show, type: 'Show' }))))
     } catch (error) {
       dispatch(loadError(error))
     }
@@ -85,7 +85,7 @@ export function loadSimilarMovies (movieId: string) {
     try {
       const { data: { results } } = await axios.get(movieDbUrls.similarMovies(movieId))
 
-      dispatch(loadSimilarMoviesSuccess(results))
+      dispatch(loadSimilarMoviesSuccess(results.map((movie: Movie) => ({ ...movie, type: 'Movie' }))))
     } catch (error) {
       dispatch(loadError(error))
     }
@@ -125,7 +125,7 @@ export function loadSimilarShows (showId: string) {
     try {
       const { data: { results } } = await axios.get(movieDbUrls.similarShows(showId))
 
-      dispatch(loadSimilarShowsSuccess(results))
+      dispatch(loadSimilarShowsSuccess(results.map((show: Show) => ({ ...show, type: 'Show' }))))
     } catch (error) {
       dispatch(loadError(error))
     }
