@@ -5,8 +5,9 @@ import ItemListDetail from '../../components/ItemListDetail/ItemListDetail'
 import './principal.css'
 import { State } from '../../interfaces/state'
 import { Movie, Show } from '../../interfaces/interfaces'
+import { PrincipalProps } from '../../interfaces/props'
 
-function Principal ({ dispatch, movies, product, shows }: any) {
+function Principal ({ dispatch, movies, product, shows }: PrincipalProps) {
   useEffect(() => {
     if (product === 'movies' && (!movies || !movies.length)) {
       dispatch(loadPopularMovies())

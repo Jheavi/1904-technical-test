@@ -10,6 +10,7 @@ export interface Movie {
   poster_path: string
   release_date: string
   title: string
+  type: 'Movie'
   video: false
   vote_average: number
   vote_count: number
@@ -27,6 +28,7 @@ export interface Show {
   overview: string
   popularity: number
   poster_path: string
+  type: 'Show'
   vote_average: number
   vote_count: number
 }
