@@ -65,7 +65,7 @@ export function loadMovieDetail (movieId: string) {
     try {
       const { data } = await axios.get(movieDbUrls.movieDetail(movieId))
 
-      dispatch(loadMovieDetailSuccess(data))
+      dispatch(loadMovieDetailSuccess({ ...data, type: 'Movie' }))
     } catch (error) {
       dispatch(loadError(error))
     }
@@ -105,7 +105,7 @@ export function loadShowDetail (showId: string) {
     try {
       const { data } = await axios.get(movieDbUrls.showDetail(showId))
 
-      dispatch(loadShowDetailSuccess(data))
+      dispatch(loadShowDetailSuccess({ ...data, type: 'Show' }))
     } catch (error) {
       dispatch(loadError(error))
     }
